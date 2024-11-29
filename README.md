@@ -81,7 +81,7 @@ E -- Login Realizado --> A
 
 # Sessão em caso de sucesso
 
-Caso o usuário esteja logado e com permissão para Rota desejada, As seguintes sessões são criads e podem ser resgatadas da seguinte forma:
+Caso o usuário esteja logado e com permissão para Rota desejada, as seguintes sessões são criadas e podem ser resgatadas da seguinte forma:
 
 - session()->get('oauth_user.loginUsuario') => Nº USP do Usuário
 - session()->get('oauth_user.nomeUsuario') => Nome completo do Usuário
