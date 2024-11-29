@@ -48,17 +48,17 @@ Por exemplo, numa chamada de rota para permissão mínima "Avancado", os usuári
 No arquivo .env são configuradas as diretivas necessárias para o funcionamento do Filter. São apresentadas e explicadas a seguir:
 
 ### Configuração para uso da Senha Única USP
-**SENHAUNICA_KEY** = key do sistema USP para autenticação no sistema
-**SENHAUNICA_SECRET** = chave cadastrada no sistema USP
-**SENHAUNICA_CALLBACK_ID** = ID do sistema cadastrado
+**SENHAUNICA_KEY** = key do sistema USP para autenticação no sistema<br>
+**SENHAUNICA_SECRET** = chave cadastrada no sistema USP<br>
+**SENHAUNICA_CALLBACK_ID** = ID do sistema cadastrado<br>
 
 ### Configuração da API para permissões Intranet IAU
-**API_SYSTEM_ID** = ID do sistema na base da Intranet do IAU
-**API_TOKEN** = Token do sistema na base da Intranet do IAU
-**API_BASE_URL** = URL para consulta da permissão
-**API_REDIRECT_ROUTE** = nome da rota para redirecionamento após sucesso no login E para acesso negado, caso o logout automático esteja setado como false
-**API_LOGIN_ROUTE** = nome da rota para redirecionamento do login do sistema
-**API_LOGOUT_ON_DENIED** = true|false - define se, ao entrar numa rota não permitida, se o logout deve ser efetuado ou não. Caso false, o usuário é redrecionado para a rota configurada em API_REDIRECT_ROUTE 
+**API_SYSTEM_ID** = ID do sistema na base da Intranet do IAU<br>
+**API_TOKEN** = Token do sistema na base da Intranet do IAU<br>
+**API_BASE_URL** = URL para consulta da permissão<br>
+**API_REDIRECT_ROUTE** = nome da rota para redirecionamento após sucesso no login E para acesso negado, caso o logout automático esteja setado como false<br>
+**API_LOGIN_ROUTE** = nome da rota para redirecionamento do login do sistema<br>
+**API_LOGOUT_ON_DENIED** = true|false - define se, ao entrar numa rota não permitida, se o logout deve ser efetuado ou não. Caso false, o usuário é redrecionado para a rota configurada em API_REDIRECT_ROUTE <br>
 
 # Comportamento
 
