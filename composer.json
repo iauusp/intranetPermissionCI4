@@ -1,5 +1,5 @@
 {
-    "name": "dpicon83/iau-intranet-permission-ci4",
+    "name": "iauusp/intranet-permission-ci4",
     "description": "Filter para uso com o CodeIgniter 4 para consumo da API de permissões da Intranet do IAU",
     "type": "library",
     "require": {
@@ -10,7 +10,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Dpicon83\\IauIntranetPermissionCi4\\": "src/"
+            "Iauusp\\IntranetPermissionCi4\\": "src/"
         }
     },
     "authors": [

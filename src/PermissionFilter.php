@@ -1,6 +1,6 @@
 <?php
 
-namespace Dpicon83\IauIntranetPermissionCi4;
+namespace Iauusp\IntranetPermissionCi4;
 
 use CodeIgniter\Filters\FilterInterface;
 use CodeIgniter\HTTP\RequestInterface;
