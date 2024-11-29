@@ -7,7 +7,7 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use GuzzleHttp\Client;
 
-class IauIntranetPermissionCi4 implements FilterInterface
+class PermissionFilter implements FilterInterface
 {
     /**
      * @param RequestInterface $request
@@ -71,7 +71,7 @@ class IauIntranetPermissionCi4 implements FilterInterface
             if (isset($data['authorized']) && $data['authorized'] === true) {
                 session()->set("user_permission", $data['permissao']);
                 session()->set("user_level", $data['nivelPermissao']);
-                return redirect()->route('relatorios.usuarios.index');
+                return redirect()->route(env('API_REDIRECT_ROUTE'));
             } else {
                 $this->removeSessoes();
                 return redirect()->route(env('API_LOGIN_ROUTE'))->with('error', 'Acesso negado.');
