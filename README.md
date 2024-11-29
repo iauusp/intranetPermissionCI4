@@ -60,3 +60,31 @@ No arquivo .env são configuradas as diretivas necessárias para o funcionamento
 **API_LOGIN_ROUTE** = nome da rota para redirecionamento do login do sistema
 **API_LOGOUT_ON_DENIED** = true|false - define se, ao entrar numa rota não permitida, se o logout deve ser efetuado ou não. Caso false, o usuário é redrecionado para a rota configurada em API_REDIRECT_ROUTE 
 
+# Comportamento
+
+Ao utilizar o Filter, o sistema segue o seguinte fluxo:
+
+```mermaid
+graph LR
+A(Tentativa de acesso à uma Rota Protegida) --> B{Usuário Está Logado?}
+B -- Sim --> C{Foi consultada a permissão na API?}
+C -- Sim --> D{Usuário possui acesso?}
+D -- Sim --> G(Permite Acesso)
+C -- Não --> H(Consulta API)
+H --> D
+D -- Não --> I{API_LOGOUT_ON_DENIED true ou false?}
+I -- true --> J(Realiza logout e redireciona para página de API_REDIRECT_ROUTE)
+I -- false --> L(Redireciona para API_LOGIN_ROUTE)
+B -- Nâo --> E(Redireciona para página de Login)
+E -- Login Realizado --> A
+```
+
+# Sessão em caso de sucesso
+
+Caso o usuário esteja logado e com permissão para Rota desejada, As seguintes sessões são criads e podem ser resgatadas da seguinte forma:
+
+- session()->get('oauth_user.loginUsuario') => Nº USP do Usuário
+- session()->get('oauth_user.nomeUsuario') => Nome completo do Usuário
+- session()->get('oauth_user.emailPrincipalUsuario') => E-mail principal do Usuário
+- session()->get('user_permission') => Permissão do Usuário para o sistema selecionado (Administrador, Gerente, Avancado, Intermediario, Usuario ou Logado)
+- session()->get('user_level') => valor inteiro referente ao campo user_permission, sendo Administrador=5, Gerente=4, Avancado=3, Intermediario=2, Usuario=1 ou Logado=0
